@@ -72,6 +72,7 @@ a {
 h1 {
   font-family: "BankGothic", sans-serif;
   font-size: 10vw;
+  white-space: no-wrap;
 }
 
 h2 {
