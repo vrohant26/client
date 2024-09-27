@@ -40,30 +40,45 @@ const darkTheme = () => {
   const toggleButton = document.getElementById("theme-toggle");
   const toggleText = toggleButton.querySelector("span"); // Select the text element
 
+  // Function to update the status bar color based on the current theme
+  const updateStatusBarColor = (theme) => {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    
+    if (theme === "dark") {
+      metaThemeColor.setAttribute("content", "#191919"); // Dark theme color
+    } else {
+      metaThemeColor.setAttribute("content", "#f7f5f0"); // Light theme color
+    }
+  };
+
   // Check if user has a previously saved theme
   const savedTheme = localStorage.getItem("theme");
 
   if (savedTheme) {
     document.documentElement.setAttribute("data-theme", savedTheme);
     toggleText.textContent = savedTheme === "dark" ? "Light Mode" : "Dark Mode"; // Set initial text
+    updateStatusBarColor(savedTheme); // Update the status bar color based on saved theme
   }
 
   // Function to toggle theme
   toggleButton.addEventListener("click", () => {
     let currentTheme = document.documentElement.getAttribute("data-theme");
 
-    // If current theme is dark, switch to light, otherwise to dark
+    // If current theme is dark, switch to light, otherwise switch to dark
     if (currentTheme === "dark") {
       document.documentElement.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light"); // Save the user's theme preference
       toggleText.textContent = "Dark Mode"; // Update the text to indicate the next toggle
+      updateStatusBarColor("light"); // Update status bar color for light theme
     } else {
       document.documentElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
       toggleText.textContent = "Light Mode"; // Update the text to indicate the next toggle
+      updateStatusBarColor("dark"); // Update status bar color for dark theme
     }
   });
 };
+
 
 const smoothScroll = () => {
   const lenis = new Lenis();
