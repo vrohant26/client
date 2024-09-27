@@ -43,11 +43,14 @@ const darkTheme = () => {
   // Function to update the status bar color based on the current theme
   const updateStatusBarColor = (theme) => {
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    const metaThemeColorIOS = document.querySelector('meta[name="apple-mobile-web-app-status-bar-style"]');
     
     if (theme === "dark") {
       metaThemeColor.setAttribute("content", "#191919"); // Dark theme color
+      metaThemeColorIOS.setAttribute("content", "#191919"); // Dark theme color
     } else {
       metaThemeColor.setAttribute("content", "#f7f5f0"); // Light theme color
+      metaThemeColorIOS.setAttribute("content", "#f7f5f0"); // Light theme color
     }
   };
 
