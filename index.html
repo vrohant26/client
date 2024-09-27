@@ -121,6 +121,24 @@
       </main>
     </div>
 
+    <script>
+      // Check if the site is being served from localhost
+      const isLocalhost = window.location.hostname === "localhost";
+
+      // Set the base path
+      const basePath = isLocalhost ? "." : "/client"; // Adjust to your GitHub repository name
+
+      // Dynamically set the CSS path
+      const linkStylesheet = document.createElement("link");
+      linkStylesheet.rel = "stylesheet";
+      linkStylesheet.href = `${basePath}/style.css`;
+      document.head.appendChild(linkStylesheet);
+
+      // Dynamically set the JS path
+      const scriptJS = document.createElement("script");
+      scriptJS.src = `${basePath}/script.js`;
+      document.body.appendChild(scriptJS);
+    </script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
