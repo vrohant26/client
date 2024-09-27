@@ -51,8 +51,7 @@
 [data-theme="dark"] {
   --light: #191919;
   --dark: #f7f5f0;
-  --secondaryLight: #353535;
-  
+  --secondaryLight: #212020;
   --text: #c2c2c2;
   --secondary-text: #575757;
 }
