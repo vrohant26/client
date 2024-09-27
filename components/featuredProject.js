@@ -33,7 +33,7 @@ function loadFeaturedProjects() {
   projects.forEach((project) => {
     projectHTML += `
         <div class="set">
-        <video autoplay loop muted src="${project.videoSrc}" alt="${project.name}"></video>
+        <video autoplay loop muted playsinline src="${project.videoSrc}" alt="${project.name}"></video>
         <div class="work-details">
         <h6>${project.name}</h6>
         </div>
