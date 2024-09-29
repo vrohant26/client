@@ -11,12 +11,14 @@
       rel="stylesheet"
       href="https://unpkg.com/lenis@1.1.13/dist/lenis.css"
     />
+   
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body data-barba="wrapper">
-    <div id="wrapper">
+    
+      
       <div id="header-container"></div>
-
       <main data-barba="container" data-barba-namespace="home">
         <section class="hero-section mb-15">
           <div class="summary uppercase px">
@@ -130,12 +132,11 @@
           </div>
         </section>
 
-        <section class="services px">
-          <div class="work-heading uppercase mb-5">
+        <section class="services mb-15 px">
+          <div class="work-heading uppercase">
             <h2>services</h2>
             <h4>
-              Providing creative solutions that bring your vision to life and
-              set your brand apart
+              Providing creative solutions that bring your vision to life
             </h4>
           </div>
           <div class="service-list">
@@ -164,26 +165,60 @@
           </div>
         </section>
 
-        <footer>
-            <div class="cta-section">
-              <h3>Have something in mind ?</h3>
-              <h4 class="mb-5">Let’s create something extraordinary</h4>
-              <button>contact us</button>
-            </div>
-            <div class="footer">
-              <div class="footer-top">
-                <h1>albatross arts</h1>
-              </div>
-              <div class="footer-bottom uppercase px">
-                <p>@2024 copyright</p>
-                <p><u>Privacy Policy </u></p>
-              </div>
-              
-              
-            </div>
-        </footer>
+       
       </main>
-    </div>  
+
+      <footer>
+        <div class="cta-section uppercase">
+          <!-- <div class="footer-top">
+            <div class="footer-top-left">
+
+              <h3>Have something in mind ?</h3>
+              <p>Let’s create something extraordinary that captures attention and inspires engagement. Together, we can transform ideas into breathtaking visuals and unforgettable experiences</p>
+            </div>
+            <div class="footer-top-right">
+              <img src="./assets/images/AAA_For_Black.svg" alt="">
+            </div>
+          </div>
+          <div class="footer-middle">
+            <h6>get in touch</h6> 
+            <h4>info@albatross.com</h4>
+          </div> -->
+          <div class="footer-bottom">
+            <p>@copyright</p>
+            <p>privacy policy</p>
+          </div>
+
+        </div>
+      </footer>
+   
+      <!-- <footer>
+        <div class="cta-section">
+          <h3>Have something in mind ?</h3>
+          <h4 class="mb-5">Let’s create something extraordinary</h4>
+          <button>contact us</button>
+        </div>
+        <div class="footer">
+          <div class="footer-top">
+            <h1>albatross arts</h1>
+          </div>
+          <div class="footer-middle">
+            <div class="middle-left">
+              <div class="col"></div>
+              <div class="col"></div>
+            </div>
+            <div class="middle-right">
+
+            </div>
+          </div>
+          <div class="footer-bottom uppercase px">
+            <p>@2024 copyright</p>
+            <p><u>Privacy Policy </u></p>
+          </div>
+          
+          
+        </div>
+    </footer> -->
 
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -191,6 +226,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="./components/featuredProject.js"></script>
+    <script src="./barba.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

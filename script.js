@@ -1,41 +1,3 @@
-  leaveAnimation = (container)=>{
-    gsap.to(container, {
-      opacity: 0,
-      duration: 0.5,
-      onComplete: () => {},
-    });
-  }
-
-  enterAnimation = (container, namespace)=>{
-    gsap.from(container, {
-      opacity: 0,
-      duration: 0.5,
-      onComplete: () => {
-        if (namespace === "home") {
-          loadFeaturedProjects();
-          dynamicWord();
-          playVideo();
-        }
-      },
-    });
-  }
-
-
-
-  // Initialize Barba.js and handle page transitions
-  barba.init({
-    transitions: [
-      {
-        name: "fade",
-        leave(data) {
-          return leaveAnimation(data.current.container)
-        },
-        enter(data) {
-          return enterAnimation(data.next.container, data.next.namespace)
-        },
-      },
-    ],
-  });
 
   const getHeader = () => {
     fetch("./components/header.html")
@@ -133,3 +95,8 @@
   getHeader();
   smoothScroll();
   dynamicWord();
+
+
+
+// GSAP ANIMATIONS //
+
