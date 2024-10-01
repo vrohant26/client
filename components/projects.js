@@ -7,6 +7,7 @@ const projects = [
     imgSrc:
       "https://lh3.google.com/u/0/d/15ouEgBRCaSs2Mf1p3S4T4fjGEru6PhXH=w1920-h927-iv1",
     featured: true,
+    category: "branding",
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const projects = [
       "https://lh3.google.com/u/0/d/15FTTIlMKGVnQnznQrVAMqGuBZjbFpUXa=w1397-h927-iv1",
     name: "Project 2",
     featured: true,
+    category: "branding",
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ const projects = [
       "https://lh3.google.com/u/0/d/1_OsQ4O97-l119zXbQWUJCuKecaBNJl8_=w1397-h927-iv1",
     name: "Project 3",
     featured: true,
+    category: "branding",
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ const projects = [
     imgSrc: "../assets/images/placeholder-image-368x246.png",
     name: "Project 4",
     featured: true,
+    category: "branding",
   },
   {
     id: 5,
@@ -41,6 +45,7 @@ const projects = [
     imgSrc: "../assets/images/placeholder-image-368x246.png",
     name: "Project 5",
     featured: true,
+    category: "branding",
   },
   {
     id: 6,
@@ -49,6 +54,7 @@ const projects = [
     imgSrc: "../assets/images/placeholder-image-368x246.png",
     name: "Project 6",
     featured: true,
+    category: "product",
   },
   {
     id: 7,
@@ -57,6 +63,7 @@ const projects = [
     imgSrc: "../assets/images/placeholder-image-368x246.png",
     name: "Project 6",
     featured: false,
+    category: "product",
   },
   {
     id: 8,
@@ -65,6 +72,7 @@ const projects = [
       "https://pub-4a3a88101a3441359add32df59ec8ed7.r2.dev/WmUtR3JFbU5zZjJzSGdtSl9Ib21lLURlc2t0b3AtVy1Db252ZXJ0ZWQt.mp4",
     name: "Project 6",
     featured: false,
+    category: "product",
   },
   {
     id: 9,
@@ -73,6 +81,7 @@ const projects = [
     imgSrc: "../assets/images/placeholder-image-368x246.png",
     name: "Project 6",
     featured: false,
+    category: "automobile",
   },
   {
     id: 10,
@@ -81,6 +90,7 @@ const projects = [
     imgSrc: "../assets/images/placeholder-image-368x246.png",
     name: "Project 6",
     featured: false,
+    category: "automobile",
   },
 ];
 
