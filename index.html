@@ -14,20 +14,24 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <div class="preloader">
-    <div class="preloader-wrapper">
-      <div class="preloader-top">
-        <h2 class="mb-5">
-          "Everything is designed. <br />Few things are designed well"
-        </h2>
-        <h5>- Steve Jobs, co-founder of Apple, Inc.</h5>
-      </div>
-      <div class="preloader-bottom">
-        <h1>100%</h1>
+
+  <body data-barba="wrapper">
+    
+    <div class="preloader">
+      <div class="preloader-wrapper">
+        <div class="preloader-top">
+          <h2>
+            "Everything is designed. <br />Few things are designed well"
+          </h2>
+          <h5>- Steve Jobs, co-founder of Apple, Inc.</h5>
+        </div>
+        <div class="preloader-bottom">
+          <h1 class="timer">100</h1>
+        </div>
       </div>
     </div>
-  </div>
-  <body data-barba="wrapper">
+
+    <div class="transition"></div>
     <div id="header-container"></div>
     <main data-barba="container" data-barba-namespace="home">
       <section class="hero-section px mb-15">
@@ -42,7 +46,8 @@
           <div class="tagline">
             <h1>Albatross Arts</h1>
           </div>
-          <video
+          <div class="video-container">
+            <video
             class="lazy-video"
             autoplay
             loop
@@ -53,6 +58,8 @@
           >
             <source type="video/mp4" />
           </video>
+          </div>
+        
         </div>
       </section>
 
@@ -100,6 +107,7 @@
           </div>
         </div>
       </section>
+      <div class="ball"><div class="ball-content"><h5>View</h5></div></div>
     </main>
 
     <footer id="footer" class="px"></footer>

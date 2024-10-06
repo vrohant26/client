@@ -140,3 +140,124 @@ smoothScroll();
 dynamicWord();
 
 // GSAP ANIMATIONS //
+
+
+
+
+
+function  preloader(){
+
+ 
+
+const chars = new SplitType(".tagline h1",{type : "chars"})
+
+const splitText = new SplitType(".preloader-top h2, .preloader-top h5",{type : "lines"})
+splitText.lines.forEach((line) => {
+  let wrapper = document.createElement("div");
+  wrapper.classList.add("line-wrapper");
+  line.parentNode.insertBefore(wrapper, line);
+  wrapper.appendChild(line);
+});
+
+var tl = gsap.timeline();
+
+
+
+tl.from(".preloader-top h2 .line, .preloader-top h5 .line, .timer",{  
+  y : "100%",
+  stagger : 0.06,
+  duration : 0.6,
+  delay : 1,
+  ease : "power2.out"
+  })
+
+tl.from(".timer", {
+  textContent: 0,
+  duration: 3,
+  ease: "Power1.easeIn",
+  snap: { textContent: 2 },
+  onComplete : ()=>{
+    gsap.to(".preloader-bottom, .preloader-top" , {
+      opacity : 0,
+    })
+  }
+},"+=0.2");
+
+tl.to(".preloader",{
+  y : "-100%",
+  duration : 1.5,
+  ease : "expo.inOut",
+  onComplete : ()=>{
+      document.querySelector(".preloader").remove()
+      // document.querySelector(".preloader").style.display = "none"
+  }
+
+})
+
+tl.from(".tagline h1 .char",{
+  y : "100%",
+  ease : "power2.Out",
+  stagger : 0.04,
+},"<=0.5")
+
+tl.from(".hero-content-bottom .video-container, .summary, #header-container",{
+  y : "10%",
+  opacity : 0,
+  stagger : 0.2
+},"<=0.05")
+
+
+
+}
+
+function cursor(){
+  
+gsap.set(".ball", {xPercent: -50, yPercent: -50});
+
+
+
+let xTo = gsap.quickTo(".ball", "x", {duration: 0.6, ease: "power3"}),
+    yTo = gsap.quickTo(".ball", "y", {duration: 0.6, ease: "power3"});
+
+window.addEventListener("mousemove", e => {
+  xTo(e.clientX);
+  yTo(e.clientY);
+});
+
+const setElements = document.querySelectorAll(".set");
+
+
+setElements.forEach(element => {
+  element.addEventListener("mouseover", () => {
+    gsap.to(".ball",{
+      width : "150px",
+      height : "150px",
+      duration : 1
+    
+    })
+    document.querySelector(".ball").style.display = "block";
+  });
+
+  element.addEventListener("mouseout", () => {
+    gsap.to(".ball",{
+      width : "0px",
+      height : "0px",
+      duration : 1
+    
+    })
+    document.querySelector(".ball").style.display = "none";
+  });
+});
+}
+
+
+
+
+
+if(window.location.pathname === "/" || window.location.pathname === "/index.html"){
+  cursor();
+  preloader()
+  
+}
+
+
