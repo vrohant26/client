@@ -62,10 +62,7 @@ body {
   background-color: var(--light);
   color: var(--dark);
   transition: all 0.2s ease-in-out;
-  
 }
-
-
 
 a {
   text-decoration: none;
@@ -75,18 +72,19 @@ a {
 h1 {
   font-family: "BankGothic", sans-serif;
   font-size: 9.5vw;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 h2 {
   font-family: "BankGothic", sans-serif;
-  font-size: 3vw;
+  font-size: 6vw;
   margin-bottom: 20px;
 }
 
 h3 {
-  font-size: 4.5vw;
-  font-family: "Acumin Pro Light", sans-serif;
+  font-size: 3vw;
+  font-family: "BankGothic", sans-serif;
+  /* font-family: "Acumin Pro Light", sans-serif; */
 }
 
 h4 {
@@ -127,14 +125,13 @@ li {
   top: 0;
   left: 0;
   background-color: var(--primary);
-  color : white;
+  color: white;
   border-radius: 50%;
   pointer-events: none;
   z-index: 999;
- 
 }
 
-.ball-content{
+.ball-content {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -152,10 +149,9 @@ li {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #212020;  
+  background-color: var(--light);
   z-index: 999;
 }
-
 
 .preloader {
   position: fixed;
@@ -164,8 +160,8 @@ li {
   width: 100%;
   height: 100%;
   background-color: #212020;
-  color : white !important;
-  
+  color: white !important;
+
   z-index: 999;
 }
 
@@ -274,7 +270,6 @@ button:hover {
 }
 
 .hero-section {
-  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -344,6 +339,7 @@ button:hover {
   margin-bottom: 10px;
   z-index: 1;
   cursor: pointer;
+  color: white !important;
   background-color: var(--secondaryLight);
 }
 
@@ -391,7 +387,6 @@ button:hover {
   justify-content: space-between;
   align-items: end;
 }
-
 
 .work-heading h4 {
   text-align: end;
@@ -456,29 +451,30 @@ button:hover {
 }
 
 .hero {
-  height: calc(50vh - 80px);
+  height: 50vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: end;
+  /* align-items: center; */
 }
 
-.overflow-hidden{
+.overflow-hidden {
   overflow: hidden;
 }
 
-
-
-.hero h5 {
-  width: 40%;
+.hero p {
+  width: 15%;
 }
 
-
-.hero h1 {
-  line-height: 10vw;
+.hero h2 {
+  text-align: center;
 }
 
 .filter {
   display: flex;
+
+  justify-content: center;
+  margin-bottom: 20px;
   gap: 20px;
 }
 
@@ -515,8 +511,7 @@ button:hover {
   object-fit: cover;
 }
 
-
-.line-wrapper{
+.line-wrapper {
   overflow: hidden;
 }
 
