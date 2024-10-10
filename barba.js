@@ -47,7 +47,7 @@ barba.init({
     {
       namespace: "home",
       beforeEnter() {
-   
+        
         loadFeaturedProjects();
         dynamicWord();
         // cursor();

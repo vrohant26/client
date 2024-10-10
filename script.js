@@ -268,9 +268,11 @@ function parallax (){
 
    gsap.from(heroImage, {
       scale : 1.2,
+      // ease  : "expo.inOut",
       scrollTrigger: {
+        // markers : true,
         trigger: ".about-hero",
-        start: "top top",
+        start: "top 40%",
         // end : "bottom -10%",
         
         scrub: true,  
