@@ -25,12 +25,13 @@
 ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
+  background-color: var(--primary) !important;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(255, 255, 255, 0.3);
+  /* background: rgba(255, 255, 255, 0.3); */
+  background: var(--secondaryLight) !important;
 }
 
 * {
@@ -44,6 +45,7 @@
   --light: #f7f5f0;
   --dark: #191919;
   --primary: #0842f8;
+  /* --primary: #0babeb; */
   --secondaryLight: #e7e7e7;
   --text: #5e5e5e;
   --secondary-text: #8f8f8f;
@@ -78,7 +80,7 @@ h1 {
 h2 {
   font-family: "BankGothic", sans-serif;
   font-size: 6vw;
-  margin-bottom: 20px;
+
 }
 
 h3 {
@@ -160,8 +162,8 @@ li {
   width: 100%;
   height: 100%;
   background-color: #212020;
-  color: white !important;
-
+  /* color: white !important; */
+  color: var(--primary);
   z-index: 999;
 }
 
@@ -228,10 +230,7 @@ a:hover {
   padding-bottom: 2vw;
 }
 
-/* img,
-video {
-  border-radius: 5px;
-} */
+
 
 .gap-50 {
   gap: 50px;
@@ -445,7 +444,7 @@ button:hover {
   align-items: center;
 }
 
-.cta p,
+.cta h5,
 .cta h2 {
   text-align: center;
 }
@@ -454,13 +453,35 @@ button:hover {
   height: 50vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; 
   /* align-items: center; */
 }
 
 .overflow-hidden {
   overflow: hidden;
 }
+
+.hero-image {
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .parallax{
+  background-image: url("https://lh3.google.com/u/0/d/15FTTIlMKGVnQnznQrVAMqGuBZjbFpUXa=w1920-h927-iv1");
+  background-position: center;
+  background-size: cover;
+  
+  height: 100%;
+  width: 100%;
+} */
+
+
 
 .hero p {
   width: 15%;
@@ -478,8 +499,21 @@ button:hover {
   gap: 20px;
 }
 
+.chip-button{
+  display: flex;
+  justify-content: center;
+}
+
+.chip-button .chip{
+  border : 1px solid var(--primary);
+  color : var(--primary);
+  width: 20%;
+  padding: 2vw 4vw;
+}
+
 .chip {
   border: 1px solid var(--dark);
+  text-align: center;
   padding: 7px 15px 5px 15px;
   border-radius: 50px;
   cursor: pointer;
@@ -513,6 +547,108 @@ button:hover {
 
 .line-wrapper {
   overflow: hidden;
+}
+
+.what-we-do{
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-we-do h4{
+  width: 70%;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* height: 50vh; */
+  background-color: var(--secondaryLight);
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  gap: 50px;
+  animation: scroll 15s linear infinite;
+}
+
+.marquee-inner .image {
+  height: 50vh; /* Set the height */
+  width: auto; /* Let the image keep its natural width */
+  object-fit: cover; /* Ensures the image maintains its aspect ratio */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.team-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap : 50px;
+  height: 100vh;
+}
+
+.team-section-top{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+}
+
+
+
+.team-section-top h5{
+  width: 350px;
+}
+
+
+.team-section-bottom{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.team{
+  flex : 1;
+  height: 60vh;
+  overflow: hidden;
+ 
+}
+
+.team-card{
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  color : white
+}
+
+.member1, .member2, .member3{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.member1{
+  background-image: url("https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+.member2{
+  background-image: url("https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 2x");
+}
+.member3{
+  background-image: url("https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 2x");
 }
 
 /* 

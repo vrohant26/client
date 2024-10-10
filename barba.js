@@ -10,6 +10,7 @@ function delay(n) {
 // Initialize Barba.js and handle page transitions
 barba.init({
   sync: true,
+
   transitions: [
     {
       name: "slider-up",
@@ -18,46 +19,71 @@ barba.init({
       },
       async leave(data) {
         const done = this.async();
-        leaveAnimation(data);
-        await delay(1200);
+        leaveAnimation(data, done);
+        await delay(1100);
         done();
       },
-      async enter(data) {
-        enterAnimation(data);
+
+      async afterLeave(){
+        ScrollTrigger.getAll().forEach( t => t.kill(false) )
+        ScrollTrigger.refresh(true);
       },
-      // async once(data) {
-      //   preloader();
-      //   enterAnimation(data);
-      // },
+     
+      async enter(data) {
+        window.scrollTo(0, 0);
+         enterAnimation(data); 
+      },
+    
+      async once(data) {
+        // preloader();
+        enterAnimation(data);
+        
+      },
     },
   ],
 
   views: [
+    
     {
       namespace: "home",
       beforeEnter() {
+   
         loadFeaturedProjects();
         dynamicWord();
-        cursor();
+        // cursor();
         lazyload();
       },
+     
     },
     {
       namespace: "work",
       beforeEnter() {
-        const splitText = new SplitType(".hero h1", { types: "chars" });
         loadAllProjects();
         lazyload();
       },
     },
     {
       namespace: "about",
-      beforeEnter() {
-        const splitText = new SplitType(".hero h1", { types: "chars" });
+      beforeEnter() {      
+        parallax();
+        textAnimation();
       },
     },
+    
   ],
+  
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const currentNamespace = document.querySelector('[data-barba="container"]').dataset.barbaNamespace;
+  if (currentNamespace === 'about') {
+    parallax();
+    textAnimation();
+  }
+});
+
 
 let tt = gsap.timeline();
 
@@ -68,9 +94,7 @@ leaveAnimation = (data) => {
     duration: 2.5,
     delay: 0.1,
     ease: "power3.inOut",
-  });
-
-  tt.to(
+  }).to(
     ".transition",
     {
       scaleY: 1.2,
@@ -79,16 +103,15 @@ leaveAnimation = (data) => {
       ease: "power3.inOut",
     },
     "-=2.2"
-  );
-  tt.to(
+  ).to(
     ".transition",
     {
       scaleY: 0,
       transformOrigin: "top",
       ease: "power3.inOut",
-      duration: 0.8,
+      duration: 1,
     },
-    "-=1.2"
+    "-=1.4"
   );
 };
 
@@ -96,7 +119,11 @@ enterAnimation = (data) => {
   gsap.from(data.next.container, {
     y: "10%",
     opacity: 1,
-    duration: 1,
-    ease: "power3.inOut",
+    duration: 1.5,
+    ease: "power2.out",
   });
 };
+
+
+
+

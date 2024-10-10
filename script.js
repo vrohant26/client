@@ -211,46 +211,109 @@ function preloader() {
   );
 }
 
-function cursor() {
-  const ball = document.querySelectorAll(".ball");
+// function cursor() {
+//   const ball = document.querySelectorAll(".ball");
 
-  if (!ball) return;
-  gsap.set(".ball", { xPercent: -50, yPercent: -50 });
-  let xTo = gsap.quickTo(".ball", "x", { duration: 0.6, ease: "power3" }),
-    yTo = gsap.quickTo(".ball", "y", { duration: 0.6, ease: "power3" });
+//   if (!ball) return;
+//   gsap.set(".ball", { xPercent: -50, yPercent: -50 });
+//   let xTo = gsap.quickTo(".ball", "x", { duration: 0.6, ease: "power3" }),
+//     yTo = gsap.quickTo(".ball", "y", { duration: 0.6, ease: "power3" });
 
-  window.addEventListener("mousemove", (e) => {
-    xTo(e.clientX);
-    yTo(e.clientY);
-  });
+//   window.addEventListener("mousemove", (e) => {
+//     xTo(e.clientX);
+//     yTo(e.clientY);
+//   });
 
-  const setElements = document.querySelectorAll(".set");
+//   const setElements = document.querySelectorAll(".set");
 
-  setElements.forEach((element) => {
-    element.addEventListener("mouseover", () => {
-      gsap.to(".ball", {
-        width: "7vw",
-        height: "7vw",
-        duration: 1,
-      });
-      document.querySelector(".ball").style.display = "block";
-    });
+//   setElements.forEach((element) => {
+//     element.addEventListener("mouseover", () => {
+//       gsap.to(".ball", {
+//         width: "7vw",
+//         height: "7vw",
+//         duration: 1,
+//       });
+//       document.querySelector(".ball").style.display = "block";
+//       // document.querySelector(".ball").add();
+//     });
+    
+//     element.addEventListener("mouseout", () => {
+//       gsap.to(".ball", {
+//         width: "0vw",
+//         height: "0vw",
+//         duration: 1,
+//       });
+//       // document.querySelector(".ball").remove();
+//       document.querySelector(".ball").style.display = "none";
+//     });
+//   });
+// }
 
-    element.addEventListener("mouseout", () => {
-      gsap.to(".ball", {
-        width: "0vw",
-        height: "0vw",
-        duration: 1,
-      });
-      document.querySelector(".ball").style.display = "none";
-    });
-  });
-}
+// preloader()
+// cursor();
 
 if (
   window.location.pathname === "/" ||
   window.location.pathname === "/index.html"
 ) {
   preloader();
-  cursor();
+  // cursor();
 }
+
+
+function parallax (){
+
+  const heroImage = document.querySelectorAll(".hero-image img")
+
+
+   gsap.from(heroImage, {
+      scale : 1.2,
+      scrollTrigger: {
+        trigger: ".about-hero",
+        start: "top top",
+        // end : "bottom -10%",
+        
+        scrub: true,  
+      }
+    });
+  
+}
+
+
+
+function textAnimation(){
+  
+  const text = document.querySelectorAll(".what-we-do h4")
+  const splitText = new SplitType(text,{types : "line, word"})
+  
+  
+  splitText.lines.forEach((line) => {
+    let wrapper = document.createElement("div");
+    wrapper.classList.add("line-wrapper");
+    line.parentNode.insertBefore(wrapper, line);
+    wrapper.appendChild(line);
+  });
+  
+  
+  gsap.from(splitText.lines,{
+    y : "100%",
+    ease : "expo.inOut",
+    stagger : 0.06,
+    duration : 0.6,
+    scrollTrigger : {
+      // markers : true,
+      trigger : ".what-we-do",
+      start : "top 60%",
+      toggleActions: "play none none reset",
+      
+    },
+
+  })
+
+}
+
+
+
+
+
+
